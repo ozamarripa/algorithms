@@ -1,7 +1,7 @@
 const assert = require("assert")
 const log = console.log.bind(this)
 
-class Node{
+class Node {
   constructor(value) {
     this.value = value
     this.next = null
