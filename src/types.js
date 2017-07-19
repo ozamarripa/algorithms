@@ -1,0 +1,6 @@
+console.log(typeof undefined)
+console.log(typeof null)
+console.log(typeof phrase)
+console.log(typeof 3)
+console.log(typeof {})
+console.log(typeof (() => {}))
