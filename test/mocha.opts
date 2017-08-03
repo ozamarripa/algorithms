@@ -1,0 +1,6 @@
+--colors
+--reporter spec
+--timeout 4000
+--check-leaks
+--recursive
+src/**/__tests__/*.js
