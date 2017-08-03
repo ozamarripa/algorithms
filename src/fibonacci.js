@@ -1,5 +1,5 @@
 
-log = console.log.bind(this)
+log = console.log.bind(console)
 // 0 1 1 2 3 5 8 13
 
 // 3 = 2 + 1
