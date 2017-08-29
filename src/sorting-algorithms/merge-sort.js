@@ -15,8 +15,6 @@
 //
 // [2, 3, 4, 5, 8]
 
-log = console.log.bind(console)
-
 function stitch(list1, list2) {
   const result = []
 

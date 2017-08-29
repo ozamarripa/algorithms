@@ -1,7 +1,7 @@
 const factorial = require("../factorial")
 const { expect } = require("chai")
 
-describe.only("Factorial", () => {
+describe("Factorial", () => {
   it("should calculate the factorial", () => {
     expect(factorial(3)).to.equal(6)
   })

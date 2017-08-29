@@ -1,4 +1,3 @@
-const log = console.log.bind(this)
 
 function splitList(list) {
   const half = list.length / 2
@@ -10,7 +9,7 @@ function splitList(list) {
 function stitch(list1, list2) {
   let newList = []
   let lastElem = null
-  for (let i = 0; i < list1.length; i++) {
+  for (let i = 0; i < list1.length; i += 1) {
     if (lastElem === null) {
       lastElem = list1[i]
     } else if (lastElem < list1[i]) {
@@ -55,5 +54,5 @@ function mergeSort(list) {
 }
 
 exports.stitch = stitchShift
-
+exports.stitch2 = stitch
 exports.mergeSort = mergeSort
