@@ -3,7 +3,6 @@
 function recursive(max, current) {
   if (current > max)
     return
-  console.log(current)
   return current + recursive(max, current+1)
 }
 
@@ -15,7 +14,6 @@ function fibonacci(n) {
   }
 
 }
-console.log("result", fibonacci(5))
 
 for (var i = 1; i <= 20; i++) {
   console.log(`${i}. ${fibonacci(i)}`);

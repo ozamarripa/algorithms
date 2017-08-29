@@ -1,5 +1,12 @@
-let assert = require("chai").assert;
-let expect = require("chai").expect;
+let assert = require("chai").assert
+let expect = require("chai").expect
+const {
+  validBraces,
+  compile,
+  isClosingBrace,
+  areMatchingBraces
+} = require("../compiler")
+
 describe('Valid Braces', () => {
 
   describe("isClosingBrace", () => {

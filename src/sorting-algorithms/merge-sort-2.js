@@ -1,13 +1,4 @@
-const assert = require("assert")
 const log = console.log.bind(this)
-
-function mergeSort(list) {
-  if (list.length === 1)
-    return list
-  const [list1, list2] = splitList(list)
-  return stitchShift(mergeSort(list1), mergeSort(list2))
-
-}
 
 function splitList(list) {
   const half = list.length / 2
@@ -56,45 +47,18 @@ function stitchShift(leftList, rightList) {
     }
   }
 
-  // while(left.length) {
-  //   results.push(left.shift());
-  // }
-  // while(right.length) {
-  //   results.push(right.shift());
-  // }
   return results.concat(left, right)
 }
 
-const list= [1,5,8,6,9,7]
-const sortedList= [1,5,6,7,8,9]
-const list1 = [ 1, 5, 8 ]
-const list2 = [ 6,9,7 ]
 
-const list3 = [ 2, 6 ,9 ]
-const list4 = [ 1, 3, 8, 11]
-const sortedList2= [1,2,3,6, 8,9, 11]
+  function mergeSort(list) {
+    if (list.length <= 1)
+      return list
+    const [list1, list2] = splitList(list)
+    return stitchShift(mergeSort(list1), mergeSort(list2))
 
-log("splitList", splitList(list))
-assert.deepEqual(
-  splitList(list),
-  [list1, list2]
-)
+  }
 
-log("stitch", stitch(list3, list4))
-assert.deepEqual(
-  stitch(list3, list4),
-  sortedList2
-)
+exports.stitch = stitchShift
 
-log("stitchShift", stitchShift(list3, list4))
-assert.deepEqual(
-  stitchShift(list3, list4),
-  sortedList2
-)
-
-log("mergeSort", mergeSort(list))
-assert.deepEqual(mergeSort(list), sortedList)
-const nums = [10,5,3,8,2,6,4,7,9,1]
-
-log("mergeSort", mergeSort(nums))
-assert.deepEqual(mergeSort(nums), [1,2,3,4,5,6,7,8,9,10])
+exports.mergeSort = mergeSort

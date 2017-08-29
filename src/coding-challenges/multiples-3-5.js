@@ -18,3 +18,10 @@ function solution(number){
   }
   return sum
 }
+
+module.exports = {
+  isMultiple5,
+  isMultiple3,
+  coerceNaturalNumber,
+  solution
+}

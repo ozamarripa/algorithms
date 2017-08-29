@@ -1,3 +1,4 @@
+
 function isClosingBrace(brace) {
   return brace === ")" || brace === "}" || brace === "]"
 }
@@ -17,7 +18,7 @@ function compile(stack, value) {
   } else {
     stack.push(value)
   }
-    
+
   return stack
 }
 
@@ -34,4 +35,11 @@ function validBraces(braces){
   valid = stack.length === 0 ? true : false
   return valid
 
+}
+
+module.exports = {
+  validBraces,
+  compile,
+  isClosingBrace,
+  areMatchingBraces
 }

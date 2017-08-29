@@ -30,3 +30,10 @@ function orderWeight(strng) {
   const result = splitNumbersFromStr(strng).sort(compareWeights)
   return result.join(" ")
 }
+
+module.exports = {
+  compareWeights,
+  orderWeight,
+  calculateWeight,
+  splitNumbersFromStr
+}

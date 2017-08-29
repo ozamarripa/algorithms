@@ -1,9 +1,14 @@
 let assert = require("chai").assert;
 let expect = require("chai").expect;
-
+const {
+  compareWeights,
+  orderWeight,
+  calculateWeight,
+  splitNumbersFromStr
+} = require("../compare-weights")
 
 describe('Order Weights', function() {
-  
+
   describe("string to array", () => {
     it("should separate by space", () => {
       expect(splitNumbersFromStr("23 34")).to.eql(["23", "34"])

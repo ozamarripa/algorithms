@@ -1,7 +1,7 @@
 const {expect} = require("chai")
-const {stitch, mergeSort} = require("../merge-sort")
+const {stitch, mergeSort} = require("../merge-sort-2")
 
-describe.only("Merge sort", function() {
+describe("Merge sort", function() {
 
   describe("Sticth", function() {
 
