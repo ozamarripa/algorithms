@@ -3,8 +3,7 @@ const assert = require("assert")
 
 function countWords(phrase) {
   let length = -1
-  if (typeof phrase === "string")
-   length = phrase.trim().split(" ").length
+  if (typeof phrase === "string") { length = phrase.trim().split(" ").length }
   return length
 }
 

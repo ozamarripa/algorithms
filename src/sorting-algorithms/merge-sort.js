@@ -20,20 +20,16 @@ log = console.log.bind(console)
 function stitch(list1, list2) {
   const result = []
 
-  while(list1.length && list2.length) {
-    if (list1[0] <= list2[0])
-      result.push(list1.shift())
-    else
-      result.push(list2.shift())
+  while (list1.length && list2.length) {
+    if (list1[0] <= list2[0]) { result.push(list1.shift()) } else { result.push(list2.shift()) }
   }
 
   return result.concat(list1, list2)
 }
 
 function mergeSort(list) {
-  if (list.length <= 1)
-    return list
-  const middle = Math.floor(list.length/2)
+  if (list.length <= 1) { return list }
+  const middle = Math.floor(list.length / 2)
 
   const list1 = list.slice(0, middle)
   const list2 = list.slice(middle, list.length)

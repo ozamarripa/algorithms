@@ -1,10 +1,8 @@
-const {expect} = require("chai")
-const {stitch, mergeSort} = require("../merge-sort")
+const { expect } = require("chai")
+const { stitch, mergeSort } = require("../merge-sort")
 
-describe("Merge sort", function() {
-
-  describe("Sticth", function() {
-
+describe("Merge sort", () => {
+  describe("Sticth", () => {
     it("should sticth together", () => {
       expect(stitch([], [])).to.eql([])
     })
@@ -28,11 +26,9 @@ describe("Merge sort", function() {
     it("should sticth together", () => {
       expect(stitch([3, 5], [4, 8, 9])).to.eql([3, 4, 5, 8, 9])
     })
-
   })
 
-  describe("Merge sort", function() {
-
+  describe("Merge sort", () => {
     it("should sort", () => {
       expect(mergeSort([])).to.eql([])
     })
@@ -52,7 +48,5 @@ describe("Merge sort", function() {
     it("should sort", () => {
       expect(mergeSort([5, 8, 3, 4, 2])).to.eql([2, 3, 4, 5, 8])
     })
-
   })
-
 })

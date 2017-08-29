@@ -1,11 +1,8 @@
-const {fibonacci, recursiveFibonacci} = require("../fibonacci")
-const {expect} = require("chai")
+const { fibonacci, recursiveFibonacci } = require("../fibonacci")
+const { expect } = require("chai")
 
-describe("Fibonacci", function() {
-
-
+describe("Fibonacci", () => {
   describe("Fibonacci", () => {
-
     it("should return the 1 Fibonacci", () => {
       expect(fibonacci(1)).to.equal(0)
     })
@@ -28,7 +25,6 @@ describe("Fibonacci", function() {
   })
 
   describe("Recursive Fibonacci", () => {
-
     it("should return the 1 Fibonacci", () => {
       expect(recursiveFibonacci(1)).to.equal(0)
     })
@@ -48,7 +44,5 @@ describe("Fibonacci", function() {
     it("should return the 5 Fibonacci", () => {
       expect(recursiveFibonacci(5)).to.equal(3)
     })
-
   })
-
 })

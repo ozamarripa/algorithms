@@ -13,11 +13,9 @@
 
 
 function factorial(n) {
-  if(n <= 1)
-    return n
+  if (n <= 1) { return n }
 
-  return n * factorial(n-1)
-
+  return n * factorial(n - 1)
 }
 
-console.log("factorial", factorial(10))
+module.exports = factorial

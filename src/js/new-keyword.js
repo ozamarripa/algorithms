@@ -3,7 +3,7 @@ function Person(name) {
   this.name = name
 }
 
-Person.prototype.talk = function() {
+Person.prototype.talk = function () {
   console.log(this.name)
 }
 
@@ -39,7 +39,7 @@ meAgain.talk()
 const cat = {
   makeSound() {
     console.log(this.sound)
-  }
+  },
 }
 
 const mark = Object.create(cat)
@@ -56,7 +56,7 @@ const mark2 = objectCreate(cat)
 mark2.sound = " khe rv"
 mark2.makeSound()
 
-cat.makeSound = function() {
+cat.makeSound = function () {
   console.log("----", this.sound)
 }
 mark.makeSound()

@@ -1,20 +1,17 @@
 
 
 function recursive(max, current) {
-  if (current > max)
-    return
-  return current + recursive(max, current+1)
+  if (current > max) { return }
+  return current + recursive(max, current + 1)
 }
 
 function fibonacci(n) {
   if (n <= 1) {
     return n
-  } else {
-    return fibonacci(n-1) + fibonacci(n-2)
   }
-
+  return fibonacci(n - 1) + fibonacci(n - 2)
 }
 
-for (var i = 1; i <= 20; i++) {
-  console.log(`${i}. ${fibonacci(i)}`);
+for (let i = 1; i <= 20; i++) {
+  console.log(`${i}. ${fibonacci(i)}`)
 }

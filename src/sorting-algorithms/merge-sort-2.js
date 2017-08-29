@@ -4,16 +4,16 @@ function splitList(list) {
   const half = list.length / 2
   const leftList = list.slice(0, half)
   const rightList = list.slice(half, list.length)
-  return[leftList, rightList]
+  return [leftList, rightList]
 }
 
 function stitch(list1, list2) {
   let newList = []
   let lastElem = null
-  for(let i = 0; i < list1.length; i++) {
-    if(lastElem === null) {
+  for (let i = 0; i < list1.length; i++) {
+    if (lastElem === null) {
       lastElem = list1[i]
-    } else if(lastElem < list1[i]) {
+    } else if (lastElem < list1[i]) {
       newList.push(lastElem)
       lastElem = list1[i]
     } else {
@@ -22,8 +22,7 @@ function stitch(list1, list2) {
     if (lastElem < list2[i]) {
       newList.push(lastElem)
       lastElem = list2[i]
-    }
-    else {
+    } else {
       newList.push(list2[i])
     }
   }
@@ -36,14 +35,12 @@ function stitch(list1, list2) {
 function stitchShift(leftList, rightList) {
   const left = leftList.slice(0)
   const right = rightList.slice(0)
-  const results  = []
+  const results = []
   while (left.length && right.length) {
-
     if (left[0] <= right[0]) {
-      results.push(left.shift());
-    }
-    else {
-      results.push(right.shift());
+      results.push(left.shift())
+    } else {
+      results.push(right.shift())
     }
   }
 
@@ -51,13 +48,11 @@ function stitchShift(leftList, rightList) {
 }
 
 
-  function mergeSort(list) {
-    if (list.length <= 1)
-      return list
-    const [list1, list2] = splitList(list)
-    return stitchShift(mergeSort(list1), mergeSort(list2))
-
-  }
+function mergeSort(list) {
+  if (list.length <= 1) { return list }
+  const [list1, list2] = splitList(list)
+  return stitchShift(mergeSort(list1), mergeSort(list2))
+}
 
 exports.stitch = stitchShift
 

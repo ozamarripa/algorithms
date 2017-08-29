@@ -1,4 +1,5 @@
 const assert = require("assert")
+
 const log = console.log.bind(this)
 
 class Node {
@@ -17,8 +18,7 @@ class LinkedList {
 
   push(value) {
     const node = new Node(value)
-    if (this.head === null)
-      this.head = node
+    if (this.head === null) { this.head = node }
     if (this.tail !== null) {
       this.tail.next = node
     }
@@ -27,18 +27,17 @@ class LinkedList {
 
   pop() {
     let prevLastNode = this.head
-    while(prevLastNode && prevLastNode.next && prevLastNode.next.next) {
+    while (prevLastNode && prevLastNode.next && prevLastNode.next.next) {
       prevLastNode = prevLastNode.next
     }
-    if(prevLastNode)
-      prevLastNode.next = null
+    if (prevLastNode) { prevLastNode.next = null }
     this.tail = prevLastNode
   }
   get(index) {
     let num = 0
     let node = this.head
     let value = null
-    while(node && num < index) {
+    while (node && num < index) {
       num++
       value = node.value
       node = node.next

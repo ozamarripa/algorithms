@@ -8,13 +8,12 @@ function areMatchingBraces(brace1, brace2) {
   return braces === "()" || braces === "[]" || braces === "{}"
 }
 
-const areNotMatchingBraces = (a,b) => !areMatchingBraces(a,b)
+const areNotMatchingBraces = (a, b) => !areMatchingBraces(a, b)
 
 function compile(stack, value) {
   if (isClosingBrace(value)) {
     const stackValue = stack.pop()
-    if(areNotMatchingBraces(stackValue, value))
-      throw new Error("Mismatch in braces")
+    if (areNotMatchingBraces(stackValue, value)) { throw new Error("Mismatch in braces") }
   } else {
     stack.push(value)
   }
@@ -22,24 +21,21 @@ function compile(stack, value) {
   return stack
 }
 
-function validBraces(braces){
+function validBraces(braces) {
   let valid = false
   let stack = []
   try {
-    stack = braces.split("").reduce((stackAccum, value) => {
-      return compile(stackAccum, value)
-    }, stack)
-  } catch(e) {
+    stack = braces.split("").reduce((stackAccum, value) => compile(stackAccum, value), stack)
+  } catch (e) {
     return false
   }
-  valid = stack.length === 0 ? true : false
+  valid = stack.length === 0
   return valid
-
 }
 
 module.exports = {
   validBraces,
   compile,
   isClosingBrace,
-  areMatchingBraces
+  areMatchingBraces,
 }

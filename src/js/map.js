@@ -8,11 +8,11 @@ map.set("1", 65813)
 log(map.size)
 log(map)
 
-for(let value of map) {
+for (const value of map) {
   log(value)
 }
 
 
-for(let value of [1,2,3]) {
+for (const value of [1, 2, 3]) {
   log(value)
 }
