@@ -1,6 +1,3 @@
-const assert = require("assert")
-
-const log = console.log.bind(this)
 
 class Node {
   constructor(value) {
@@ -27,18 +24,23 @@ class LinkedList {
 
   pop() {
     let prevLastNode = this.head
+    let value
     while (prevLastNode && prevLastNode.next && prevLastNode.next.next) {
       prevLastNode = prevLastNode.next
     }
-    if (prevLastNode) { prevLastNode.next = null }
+    if (prevLastNode) {
+      value = prevLastNode.next.value
+      prevLastNode.next = null
+    }
     this.tail = prevLastNode
+    return value
   }
   get(index) {
     let num = 0
     let node = this.head
     let value = null
     while (node && num < index) {
-      num++
+      num += 1
       value = node.value
       node = node.next
     }
@@ -47,14 +49,4 @@ class LinkedList {
   }
 }
 
-const list = new LinkedList()
-
-list.push(1)
-list.push(2)
-list.push(3)
-list.push(4)
-list.pop()
-
-log("head", list.head)
-log("tail", list.tail)
-log("get", list.get(5))
+module.exports = LinkedList
