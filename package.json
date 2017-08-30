@@ -1,7 +1,7 @@
 {
   "name": "computer-science",
   "version": "1.0.0",
-  "description": "",
+  "description": "Various implementations of algorithms, coding challenges and javascript concepts.",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
